@@ -13,7 +13,23 @@ require('laravel-elixir-vue-2');
  |
  */
 
+
 elixir(mix => {
+
+
+    mix.browserSync({
+        files: [
+            'app/**/*',
+            'public/**/*',
+            'resources/views/**/*'
+        ],
+        port: 5000,
+        proxy: 'localhost:8000'
+    });
+
+    mix.webpack('test.js');
+
+    mix.watch();
 
     mix.sass('app.scss')
         .webpack('app.js');

@@ -43,8 +43,14 @@ Route::get('tag/{tag}', 'TagController@show');
 
 /* Dashboard Index */
 Route::group(['prefix' => 'dashboard', 'middleware' => ['auth', 'admin']], function () {
+    Route::get('test', 'HomeController@test');
+
+
    Route::get('{path?}', 'HomeController@dashboard')->where('path', '[\/\w\.-]*');
+
+
 });
 
 Route::get('/', 'ArticleController@index');
 Route::get('{slug}', 'ArticleController@show');
+

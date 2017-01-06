@@ -39,4 +39,9 @@ class HomeController extends Controller
 
         return view('search', compact('articles'));
     }
+
+    public function test()
+    {
+        return view('test.index');
+    }
 }
